@@ -7,12 +7,13 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    font-size: 22px;
     background-color: #e6e6fa;
 }
 
 #sidebar {
     background-color: #9370db;
-    width: 250px;
+    width: 300px;
     height: 100vh;
     position: fixed;
     padding: 20px;
@@ -36,7 +37,7 @@ body {
 }
 
 #content {
-    margin-left: 250px;
+    margin-left: 300px;
     padding: 20px;
 }
 
@@ -56,3 +57,29 @@ p {
     width: 30%; /* Adjust this value to change the chart width */
     height: 30%; /* Adjust this value to change the chart height */
 }
+
+.sub-menu {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.sub-menu li {
+    display: none;
+}
+
+.sub-menu li a {
+    color: #ffffff;
+    padding: 5px 10px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sub-menu li a:hover {
+    background-color: #b0a4e3;
+}
+
+li:hover > .sub-menu li {
+    display: block;
+}
+

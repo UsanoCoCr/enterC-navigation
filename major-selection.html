@@ -6,13 +6,27 @@
     <title>College Major Selection</title>
     <link rel="stylesheet" href="major-selection.css">
     <script>
-        function showMajor(major) {
-            const majorSections = document.getElementsByClassName('major-section');
-            for (let i = 0; i < majorSections.length; i++) {
-                majorSections[i].style.display = 'none';
+        function showSection(sectionId) {
+            const sections = document.getElementsByClassName('major-section');
+            for (let i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
             }
-            document.getElementById(major).style.display = 'block';
+            document.getElementById(sectionId).style.display = 'block';
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    const sectionId = this.getAttribute('data-section');
+                    if (sectionId) {
+                        event.preventDefault();
+                        showSection(sectionId);
+                    }
+                });
+            });
+        });
+        
     </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -25,16 +39,33 @@
                 <li><a href="major-selection.html">Major Selection</a></li>
             </ul>
         </nav>
-        
+
         <nav>
             <ul>
-                <li><a href="#" onclick="showMajor('computer-science')">Computer Science</a></li>
-                <li><a href="#" onclick="showMajor('finance')">Finance</a></li>
-                <li><a href="#" onclick="showMajor('biology')">Biology</a></li>
-                <!-- Add more majors here -->
+                <li>
+                    <a href="#">Computer Science</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" data-section="computer-science">General</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Finance</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" data-section="finance">General</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Biology</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" data-section="biology">General</a></li>
+                        <li><a href="#" data-section="medical">Medical</a></li>
+                        <li><a href="#" data-section="cell-science">Cell Science</a></li>
+                        <!-- Add more subsections here -->
+                    </ul>
+                </li>
             </ul>
         </nav>
-    </div>
+    </div>    
     <div id="content">
         <section id="computer-science" class="major-section">
             <h1>Computer Science</h1>
@@ -65,7 +96,21 @@
                 <br>
                 Biology major content goes here.
             </p>
-        </section>                 
+        </section>  
+
+        <section id="medical" class="major-section">
+            <h1>Medical</h1>
+            <p>
+                Medical subsection content goes here.
+            </p>
+        </section>
+        <section id="cell-science" class="major-section">
+            <h1>Cell Science</h1>
+            <p>
+                Cell Science subsection content goes here.
+            </p>
+        </section>    
+                           
         <!-- Add more sections for each major here -->
     </div>
 </body>
