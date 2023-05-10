@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Major Selection</title>
+    <title>专业汇总</title>
     <link rel="stylesheet" href="major-selection.css">
     <script>
         function showSection(sectionId) {
@@ -35,32 +35,32 @@
     <div id="sidebar">
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="major-selection.html">Major Selection</a></li>
+                <li><a href="index.html">网站主页</a></li>
+                <li><a href="major-selection.html">专业汇总</a></li>
             </ul>
         </nav>
 
         <nav>
             <ul>
                 <li>
-                    <a href="#">Computer Science</a>
+                    <a href="#">信息科学技术</a>
                     <ul class="sub-menu">
-                        <li><a href="#" data-section="computer-science">General</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Finance</a>
-                    <ul class="sub-menu">
-                        <li><a href="#" data-section="finance">General</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Biology</a>
-                    <ul class="sub-menu">
-                        <li><a href="#" data-section="biology">General</a></li>
-                        <li><a href="#" data-section="medical">Medical</a></li>
-                        <li><a href="#" data-section="cell-science">Cell Science</a></li>
+                        <li><a href="#" data-section="computer-science">⭐基本信息</a></li>
+                        <li><a href="#" data-section="AI">人工智能</a></li>
+                        <li><a href="#" data-section="cs">计算机科学与技术</a></li>
                         <!-- Add more subsections here -->
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">经济工商与管理</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" data-section="finance">⭐基本信息</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">生命科学</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" data-section="biology">⭐基本信息</a></li>
                     </ul>
                 </li>
             </ul>
@@ -68,46 +68,46 @@
     </div>    
     <div id="content">
         <section id="computer-science" class="major-section">
-            <h1>Computer Science</h1>
+            <h1>信息技术科学</h1>
             <div class="chart-container">
                 <canvas id="computer-science-chart"></canvas>
             </div>
             <p>
                 <br>
-                Computer Science major content goes here.
+                暂时无法给你明确答复。
             </p>
         </section>
         <section id="finance" class="major-section">
-            <h1>Finance</h1>
+            <h1>经济工商与管理</h1>
             <div class="chart-container">
                 <canvas id="finance-chart"></canvas>
             </div>
             <p>
                 <br>
-                Finance major content goes here.
+                未能找到协作者。
             </p>
         </section>
         <section id="biology" class="major-section">
-            <h1>Biology</h1>
+            <h1>生命科学</h1>
             <div class="chart-container">
                 <canvas id="biology-chart"></canvas>
             </div>
             <p>
                 <br>
-                Biology major content goes here.
+                未能找到协作者。
             </p>
         </section>  
 
-        <section id="medical" class="major-section">
-            <h1>Medical</h1>
+        <section id="AI" class="major-section">
+            <h1>人工智能</h1>
             <p>
-                Medical subsection content goes here.
+                人工智能 subsection content goes here.
             </p>
         </section>
-        <section id="cell-science" class="major-section">
-            <h1>Cell Science</h1>
+        <section id="cs" class="major-section">
+            <h1>计算机科学与技术</h1>
             <p>
-                Cell Science subsection content goes here.
+                计算机科学与技术 subsection content goes here.
             </p>
         </section>    
                            
@@ -134,18 +134,22 @@ function createRadarChart(chartId, data) {
         options: {
             scales: {
                 r: {
+                    min: 0,
+                    max: 5,
                     ticks: {
-                        beginAtZero: true,
-                        max: 5
+                        stepSize: 1,
+                        callback: function(value) {
+                            return value;
+                        }
                     }
                 }
             }
         }
     });
 }
-createRadarChart('computer-science-chart', [4, 5, 3, 4, 4]);
-createRadarChart('finance-chart', [3, 4, 2, 3, 3]);
-createRadarChart('biology-chart', [3, 3, 1, 4, 5]);
+createRadarChart('computer-science-chart', [4, 5, 4, 4, 4]);
+createRadarChart('finance-chart', [3, 5, 4, 3, 2]);
+createRadarChart('biology-chart', [4, 2, 3, 4, 3]);
 </script>
 
 
