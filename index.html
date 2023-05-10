@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Major Selection - Home</title>
+    <link rel="stylesheet" href="index.css">
+    <script>
+        function showSection(section) {
+            const sections = document.getElementsByClassName('content-section');
+            for (let i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+            document.getElementById(section).style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div id="sidebar">
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('home')">Home</a></li>
+                <li><a href="major-selection.html">Major Selection</a></li>
+                <li><a href="#" onclick="showSection('experience')">My Experience</a></li>
+                <li><a href="https://usanococr.github.io/" target="_blank">My GitHub Page</a></li>
+                <!-- Add more navigation links here -->
+            </ul>
+        </nav>
+    </div>
+    <div id="content">
+        <section id="home" class="content-section">
+            <h1>Welcome to College Major Selection!</h1>
+            <p>
+                This website is designed to help you learn more about different college majors, such as Computer Science, Finance, Biology, and more. Explore each major to discover the skills, career opportunities, and academic requirements associated with each field.
+            </p>
+            <p>
+                To start exploring majors, click on the "Major Selection" link in the left-side navigation menu.
+            </p>
+        </section>
+        <section id="experience" class="content-section" style="display:none;">
+            <h1>My Experience</h1>
+            <p>
+                Add your experience details here.
+            </p>
+        </section>
+    </div>
+</body>
+</html>

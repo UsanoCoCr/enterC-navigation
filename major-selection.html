@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Major Selection</title>
+    <link rel="stylesheet" href="major-selection.css">
+    <script>
+        function showMajor(major) {
+            const majorSections = document.getElementsByClassName('major-section');
+            for (let i = 0; i < majorSections.length; i++) {
+                majorSections[i].style.display = 'none';
+            }
+            document.getElementById(major).style.display = 'block';
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <div id="sidebar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="major-selection.html">Major Selection</a></li>
+            </ul>
+        </nav>
+        
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showMajor('computer-science')">Computer Science</a></li>
+                <li><a href="#" onclick="showMajor('finance')">Finance</a></li>
+                <li><a href="#" onclick="showMajor('biology')">Biology</a></li>
+                <!-- Add more majors here -->
+            </ul>
+        </nav>
+    </div>
+    <div id="content">
+        <section id="computer-science" class="major-section">
+            <h1>Computer Science</h1>
+            <div class="chart-container">
+                <canvas id="computer-science-chart"></canvas>
+            </div>
+            <p>
+                <br>
+                Computer Science major content goes here.
+            </p>
+        </section>
+        <section id="finance" class="major-section">
+            <h1>Finance</h1>
+            <div class="chart-container">
+                <canvas id="finance-chart"></canvas>
+            </div>
+            <p>
+                <br>
+                Finance major content goes here.
+            </p>
+        </section>
+        <section id="biology" class="major-section">
+            <h1>Biology</h1>
+            <div class="chart-container">
+                <canvas id="biology-chart"></canvas>
+            </div>
+            <p>
+                <br>
+                Biology major content goes here.
+            </p>
+        </section>                 
+        <!-- Add more sections for each major here -->
+    </div>
+</body>
+</html>
+
+<script>
+function createRadarChart(chartId, data) {
+    const ctx = document.getElementById(chartId).getContext('2d');
+    new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ['难度', '出路', '内卷程度', '任务量', '出国倾向'],
+            datasets: [{
+                label: 'Major Attributes',
+                data: data,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                r: {
+                    ticks: {
+                        beginAtZero: true,
+                        max: 5
+                    }
+                }
+            }
+        }
+    });
+}
+createRadarChart('computer-science-chart', [4, 5, 3, 4, 4]);
+createRadarChart('finance-chart', [3, 4, 2, 3, 3]);
+createRadarChart('biology-chart', [3, 3, 1, 4, 5]);
+</script>
+
+
+
