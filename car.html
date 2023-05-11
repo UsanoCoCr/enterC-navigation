@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专业汇总</title>
+    <link rel="stylesheet" href="car.css">
+    <script>
+        function showSection(sectionId) {
+            const sections = document.getElementsByClassName('major-section');
+            for (let i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    const sectionId = this.getAttribute('data-section');
+                    if (sectionId) {
+                        event.preventDefault();
+                        showSection(sectionId);
+                    }
+                });
+            });
+        });
+        
+    </script>
+</head>
+<body>
+    <div id="sidebar">
+        <nav>
+            <ul>
+                <li><a href="index.html">网站主页</a></li>
+                <li><a href="major-selection.html">专业汇总</a></li>
+            </ul>
+        </nav>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">学车信息</a>
+                    <ul class="sub-menu">
+                        <li><a href="#" data-section="lv0">lv0-学车流程初探</a></li>
+                        <li><a href="#" data-section="lv1">lv1-驾校与车型选择</a></li>
+                        <li><a href="#" data-section="lv2">lv2-科目一</a></li>
+                        <li><a href="#" data-section="lv3">lv3-科目二</a></li>
+                        <li><a href="#" data-section="lv4">lv4-科目三</a></li>
+                        <li><a href="#" data-section="lv5">lv5-科目四</a></li>
+                        <!-- Add more subsections here -->
+                    </ul>
+            </ul>
+        </nav>
+    </div>    
+    <div id="content">
+        <section id="lv0" class="major-section">
+            <h1>lv0-学车流程初探</h1>
+            <p>
+                你好，这里是lv0-学车流程初探。
+                <br>
+                本节主要介绍学车的一些基本流程，以及一些基本的概念。
+                <br>
+            </p>
+        </section>
+        <section id="lv1" class="major-section">
+            <h1>lv1-驾校与车型选择</h1>
+            <p>
+                你好，这里是lv1-驾校与车型选择。
+                <br>
+                本节主要介绍驾校与车型的选择。
+                <br>
+            </p>
+        </section>
+        <section id="lv2" class="major-section">
+            <h1>lv2-科目一</h1>
+            <p>
+                你好，这里是lv2-科目一。
+                <br>
+                本节主要介绍科目一的学习方法。
+                <br>
+            </p>
+        </section>
+        <section id="lv3" class="major-section">
+            <h1>lv3-科目二</h1>
+            <p>
+                你好，这里是lv3-科目二。
+                <br>
+                本节主要介绍科目二的学习方法。
+                <br>
+            </p>
+        </section>
+        <section id="lv4" class="major-section">
+            <h1>lv4-科目三</h1>
+            <p>
+                你好，这里是lv4-科目三。
+                <br>
+                本节主要介绍科目三的学习方法。
+                <br>
+            </p>
+        </section>
+        <section id="lv5" class="major-section">
+            <h1>lv5-科目四</h1>
+            <p>
+                你好，这里是lv5-科目四。
+                <br>
+                本节主要介绍科目四的学习方法。
+                <br>
+            </p>
+        </section>
+    </div>
+</body>
+</html>
