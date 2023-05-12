@@ -9,7 +9,7 @@ body {
     line-height: 1.6;
     font-size: 22px;
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-    url('https://th.bing.com/th/id/OIP.YDmd0GA5Sgs50zvN_4of5gHaEo?w=264&h=180&c=7&r=0&o=5&dpr=1.8&pid=1.7');
+    url('bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -46,6 +46,7 @@ body {
     margin-left: 300px;
     padding: 20px;
     display: flex;  /* 使用Flex布局，使得内容沿着水平方向排列 */
+    flex-direction: column;  /* 将内容沿着垂直方向排列 */
     justify-content: flex-end;  /* 将内容对齐到右侧 */
 }
 
@@ -67,8 +68,4 @@ p {
     right: 10px;  /* 设置图片距离页面右侧的距离 */
     border: 5px solid #000;  /* 添加一个5像素宽的黑色实线边框 */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  /* 添加一个半透明的黑色阴影 */
-}
-
-ul {
-    padding-left: 40px;  /* 设置列表项的左侧内边距为40像素 */
 }
