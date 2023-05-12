@@ -8,7 +8,10 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     font-size: 22px;
-    background-color: #f0f8ff;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+    url('https://th.bing.com/th/id/OIP.YDmd0GA5Sgs50zvN_4of5gHaEo?w=264&h=180&c=7&r=0&o=5&dpr=1.8&pid=1.7');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #sidebar {
@@ -17,6 +20,9 @@ body {
     height: 100vh;
     position: fixed;
     padding: 20px;
+    background: linear-gradient(to bottom, #00c6ff, #1e90ff);
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #sidebar ul {
@@ -39,6 +45,8 @@ body {
 #content {
     margin-left: 300px;
     padding: 20px;
+    display: flex;  /* 使用Flex布局，使得内容沿着水平方向排列 */
+    justify-content: flex-end;  /* 将内容对齐到右侧 */
 }
 
 h1, h2 {
@@ -49,3 +57,18 @@ p {
     margin-bottom: 20px;
 }
 
+#logo {
+    width: 150px;  /* 设置图片的宽度 */
+    height: 150px;  /* 设置图片的高度 */
+    border-radius: 50%;  /* 将图片限制在一个圆内 */
+    object-fit: cover;  /* 确保图片填充整个元素，但保持其宽高比 */
+    position: fixed;  /* 将图片固定在页面上 */
+    top: 10px;  /* 设置图片距离页面顶部的距离 */
+    right: 10px;  /* 设置图片距离页面右侧的距离 */
+    border: 5px solid #000;  /* 添加一个5像素宽的黑色实线边框 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  /* 添加一个半透明的黑色阴影 */
+}
+
+ul {
+    padding-left: 40px;  /* 设置列表项的左侧内边距为40像素 */
+}

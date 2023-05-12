@@ -92,6 +92,7 @@
         </nav>
     </div>    
     <div id="content">
+        <img id="logo" src="enterC.jpg" alt="Logo">
         <section id="computer-science" class="major-section">
             <h1>信息技术科学</h1>
             <div class="chart-container">
@@ -225,10 +226,10 @@ function createRadarChart(chartId, data) {
         data: {
             labels: ['难度', '出路', '内卷程度', '任务量', '出国倾向'],
             datasets: [{
-                label: 'Major Attributes',
+                label: '刻板印象图',
                 data: data,
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(0, 123, 255, 0.5)',
+                borderColor: 'rgba(0, 123, 255, 1)',
                 borderWidth: 1
             }]
         },
@@ -241,6 +242,11 @@ function createRadarChart(chartId, data) {
                         stepSize: 1,
                         callback: function(value) {
                             return value;
+                        }
+                    },
+                    pointLabels: {
+                        font: {
+                            size: 16
                         }
                     }
                 }
